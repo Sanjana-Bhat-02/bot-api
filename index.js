@@ -15,6 +15,7 @@ app.get('/fact', (req, res) => {
     .then(response => response.json())
     .then(data => {
         res.send(sendRandomItem(data));
+       
     })
     .catch(error => {
       console.error(error);
@@ -31,7 +32,8 @@ app.get('/picture', (req, res) => {
             return;
         }
         const pictures = data.split("\n");
-        res.send(sendRandomItem(pictures));
+        //res.send(sendRandomItem(pictures));
+        res.send('https://cdn2.thecatapi.com/images/3g4.jpg');
         
     })
 })
