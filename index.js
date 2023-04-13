@@ -1,4 +1,5 @@
 const express = require('express');
+const pictures = require('./pics.json')
 const fs = require('fs')
 const app = express();
 
@@ -25,17 +26,11 @@ app.get('/fact', (req, res) => {
 
 //route handler for GET requests to /picture
 app.get('/picture', (req, res) => {
-    // fs.readFile('./pics.txt', 'utf-8', (err, data) => {
-    //     if (err) {
-    //         console.error(err);
-    //         res.status(500).send('Internal server error');
-    //         return;
-    //     }
-        //const pictures = data.split("\n");
-        //res.send(sendRandomItem(pictures));
-        res.send('https://cdn2.thecatapi.com/images/3g4.jpg');
+        
+        res.send(sendRandomItem(pictures));
+        
         
     })
-//})
 
-app.listen(80);
+
+app.listen(80)
